@@ -28,6 +28,11 @@ $(window).on("load", function(){
     console.log($(this).val(currentElement));
   });
 
+  // $("#reset-button").click(function){
+  //     gameOn=true;
+  //     clickCount = 4;
+  // });
+
 
   $(".gemImg").click(function(){
 
@@ -74,8 +79,6 @@ $(window).on("load", function(){
     }
     return a;
 }
-
-
   
   function crystalNum(max){
     
