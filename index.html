@@ -21,15 +21,15 @@
     <div class="row">
         <section id="insturctions" class="col-12 col-sm-4">
           <h2>How to play</h2>
-          <p>You will be given a random number.</p>
-          <p>There are four crystals. Each crystal is worth a random amount.</p>
-          <p>The values of the crystal are hiden from you. Add up the crystals to get to the total of the random number</p>
-          <p>WIN: If you can add up enough crystals to get the total of the random number, you win!</p>
-          <p>LOSE: careful! You only have 5 tries and if you add too much to your total and it is more than the random number, you lose!</p>
+          <p>The game will display a random number.</p>
+          <p>There are five crystals. Each crystal is worth a random amount.</p>
+          <p>The values of the crystals are hiden from you. Add up 4 crystals to get to the total of the random number</p>
+          <p>WIN: If the four crystals add up to the random number, you win!</p>
+          <p>LOSE: If the total of the four crystals add up to more than the random number or if adds up to less than the random number, you lose!</p>
 
         </section>
         
-        <section id="gmae-div" class ="col-12 col-sm-8">
+        <section id="game-div" class ="col-12 col-sm-8">
           <div class="row">
             <h3 class="col-6 text-right" id="win-div">Wins: 0 </h3>
             <h3 class="col-6 text-left" id="lose-div">Losses: 0</h3>
@@ -58,6 +58,10 @@
           
           <div id="total" class="text-center mt-5">
               <h3>Total: <span id="gameTotal"></span> </h3>
+          </div>
+
+          <div class="row justify-content-center mt-5">  
+            <button class="btn btn-dark" id="reset-button">Reset</button>
           </div>
 
         </section>
