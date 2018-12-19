@@ -1,31 +1,24 @@
 
 
 var gameNum;
-var wins;
-var losses;
+var wins =0;
+var losses =0;
 var total =0;
 var numArray = [];
+var gameOn;
+var clickCount;
 
 $(window).on("load", function(){
   
-  gemDiv = $("game-div");
+  gameOn=true;
+  clickCount = 4;
   gameNum = Math.floor(Math.random() * 51);
   console.log(gameNum);
   $("#gameNum-div").text(gameNum);
   crystalNum(gameNum);
   console.log(numArray);
 
-  // $(".gemImg").each(function(){
-      
-    
-  //   var currentElement = $(this);
-  //     var j= 0;
-  //     currentElement.val(numArray[j]);
-  //     j++;
-
-  //     console.log(currentElement);
-  // });
-
+  
   $.each($('.gemImg'), function (index, value) { 
 
     currentElement = numArray[index];
@@ -37,17 +30,50 @@ $(window).on("load", function(){
 
 
   $(".gemImg").click(function(){
+
     
-    var gemValue = $(this).val();
-    console.log(gemValue);
+    if(gameOn){
+      var gemValue = $(this).val();
+      console.log("this gem value is: " + gemValue);
 
-    total = total + parseInt(gemValue);
+      total = total + parseInt(gemValue);
+      clickCount--;
+      console.log("clicks left: " + clickCount);
 
-    $("#gameTotal").html(total);
-    console.log(total);
+      if(clickCount === 0){
+        gameOn = false;
+        console.log("Total is: " + gameNum);
 
+        if(total === gameNum){
+          wins++;
+          $("#win-div").text("Wins: " + wins);
+          console.log(`add ${wins} win`);
+        }
+        else{
+          losses++;
+          $("#lose-div").text("Losses: " + losses);
+          console.log( `add ${losses} lose`);
+        }
+      }
+
+
+      $("#gameTotal").html(total);
+      console.log("Total is " + total);
+    }
 
   });
+
+  
+  function shuffle(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+}
 
 
   
@@ -61,7 +87,7 @@ $(window).on("load", function(){
     var ran = Math.floor(Math.random() * (max/2));
 
     numArray.push(r1,r2,r3,r4,ran);
-
+    numArray = shuffle(numArray);
     
     function randombetween(min, max) {
       return Math.floor(Math.random()*(max-min+1)+min);
