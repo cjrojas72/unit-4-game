@@ -1,0 +1,9 @@
+.gemImg {
+  width: 15%;
+  margin: 2px;
+}
+
+.gemImg img{
+  width: 100%;
+  font-weight: bold
+}

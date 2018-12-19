@@ -6,7 +6,9 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="assets/css/style.css">
+
 <title>Crystal Game</title>
 </head>
 <body>
@@ -28,7 +30,35 @@
         </section>
         
         <section id="gmae-div" class ="col-12 col-sm-8">
-          <h2>Number: </h2>
+          <div class="row">
+            <h3 class="col-6 text-right" id="win-div">Wins: 0 </h3>
+            <h3 class="col-6 text-left" id="lose-div">Losses: 0</h3>
+          </div>
+          
+          <p class="col-12 text-center">Number: <span id="gameNum-div">0</span></p>
+
+          <div class="row justify-content-center mt-2">
+
+            <div class="gemImg" id="gem1">
+              <img src="assets/images/blueGem.png" alt="Blue Crystal">
+            </div>
+            <div class="gemImg" id="gem2">
+               <img src="assets/images/greenGem.png" alt="Green Crystal">
+            </div>             
+            <div class="gemImg" id="gem3">
+              <img src="assets/images/purpleGem1.png" alt="Purple Crystal">
+            </div>  
+            <div class="gemImg" id="gem4">           
+              <img src="assets/images/redGem.png" alt="Red Crystal">
+            </div>
+            <div class="gemImg" id="gem5">           
+                <img src="assets/images/redGem.png" alt="Red Crystal">
+              </div>
+          </div>
+          
+          <div id="total" class="text-center mt-5">
+              <h3>Total: <span id="gameTotal"></span> </h3>
+          </div>
 
         </section>
     </div>
@@ -39,5 +69,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="assets/javascript/game.js"></script>
 </body>
 </html>
