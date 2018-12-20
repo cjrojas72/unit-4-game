@@ -28,10 +28,22 @@ $(window).on("load", function(){
     console.log($(this).val(currentElement));
   });
 
-  // $("#reset-button").click(function){
-  //     gameOn=true;
-  //     clickCount = 4;
-  // });
+  $("#reset-button").click(function(){
+      
+      console.log("reset button clicked");
+
+      gameNum = Math.floor(Math.random() * 51);
+      total = 0;
+      $("#gameNum-div").text(gameNum);
+      $("#gameTotal").html(total);
+      gameOn=true;
+      clickCount = 4;
+      numArray = [];
+      crystalNum(gameNum);
+      console.log("Game Number is " + gameNum);
+      console.log(numArray);
+
+  });
 
 
   $(".gemImg").click(function(){
@@ -95,6 +107,7 @@ $(window).on("load", function(){
     function randombetween(min, max) {
       return Math.floor(Math.random()*(max-min+1)+min);
     }
+
   }
 
 });
